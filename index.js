@@ -45,12 +45,6 @@ const statusMessages = [
 
 let currentIndex = 0;
 
-function updateStatus() {
-  const currentStatus = statusMessages[currentIndex];
-  client.user.setPresence({
-    activities: [{ name: currentStatus.name, type: currentStatus.type }],
-  });
-
   console.log('\x1b[33m[ STATUS ]\x1b[0m', `Updated status to: ${currentStatus.name} (${ActivityType[currentStatus.type]})`);
   currentIndex = (currentIndex + 1) % statusMessages.length;
 }
